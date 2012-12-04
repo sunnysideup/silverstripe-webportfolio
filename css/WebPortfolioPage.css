@@ -1,0 +1,14 @@
+#WebPortfolioItems {list-style: none; margin-left: 0px; padding-left: 0px;}
+#WebPortfolioItems li {background-image: none; margin-left: 0px; padding-left: 0px; list-style-image: none; float: left; width: 260px; margin: 30px;}
+#WebPortfolioItems li.even {margin-right: 0px}
+#WebPortfolioItems li.odd {clear: left;}
+#WebPortfolioItems li img{padding: 0px; margin: 0px; margin-bottom: 10px; float: none}
+#WebPortfolioItems li .portFolioItem{width: 250px;}
+#WebPortfolioItems li span{display: block; font-size: 0.67em;}
+#WebPortfolioItems li span.notes{padding-bottom: 7px; }
+#WebPortfolioItems li span.notes a{font-weight: bold;}
+
+.returnToNormal {clear: left}
+
+
+.webPortfolioMoreInfo {display: hide;}
