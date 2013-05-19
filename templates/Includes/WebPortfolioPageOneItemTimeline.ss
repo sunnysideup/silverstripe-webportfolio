@@ -1,7 +1,7 @@
 <div id="webPortfolioItemOuter$ID" class="webPortfolioItemOuter">
 <% if Screenshot %>
-	<a href="$Link" rel="prettyPhoto">
-		<% control Screenshot.SetWidth(250) %><img width="250" height="188" alt="$Title.ATT" src="$Link"/><% end_control %>
+	<a href="$Link" rel="prettyPhoto" class="screenshotLink">
+		<% control Screenshot.SetWidth(250) %><img width="250" alt="$Title.ATT" src="$Link" /><% end_control %>
 	</a>
 <% end_if %>
 <div class="portFolioItem">
