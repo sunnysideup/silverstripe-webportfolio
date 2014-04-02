@@ -3,7 +3,7 @@
 	"type": "silverstripe-module",
 	"description": "add a portfolio to your silverstripe website",
 	"homepage": "http://www.silverstripe-webdevelopment.com",
-	"keywords": ["webportfolio", "silverstripe", "portfolio"],
+	"keywords": ["webportfolio", "silverstripe", "portfolio", "web-developer", "list of work", "gallery", "timeline"],
 	"license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
 	"authors":[
 		{
@@ -15,7 +15,7 @@
 	],
 	"require":{
 		"silverstripe/framework": "~3.1",
-		"silverstripe/cms": "~3.1",
+		"silverstripe/cms": "~3.1"
 	},
 	"extra": {
 		"installer-name": "webportfolio"
