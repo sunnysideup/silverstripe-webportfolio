@@ -7,24 +7,24 @@
 
 class WebPortfolioAgent extends DataObject {
 
-	public static $db = array(
+	private static $db = array(
 		"Name" => "Varchar(255)",
 		"AgentWebAddress" => "Varchar(255)"
 	);
 
-	public static $has_many = array(
+	private static $has_many = array(
 		"WebPortfolioItem" => "WebPortfolioItem"
 	);
 
-	public static $default_sort = "Name";
+	private static $default_sort = "Name";
 
-	public static $searchable_fields = array(
+	private static $searchable_fields = array(
 		"Name" => "PartialMatchFilter",
 		"AgentWebAddress"
 	);
 
-	public static $singular_name = "Web Portfolio Agent";
+	private static $singular_name = "Web Portfolio Agent";
 
-	public static $plural_name = "Web Portfolio Agents";
+	private static $plural_name = "Web Portfolio Agents";
 
 }

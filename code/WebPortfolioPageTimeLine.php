@@ -11,26 +11,26 @@
 
 class WebPortfolioPageTimeLine extends Page {
 
-	static $icon = "webportfolio/images/treeicons/WebPortfolioPageTimeLine";
+	private static $icon = "webportfolio/images/treeicons/WebPortfolioPageTimeLine";
 
-	public static $db = array(
+	private static $db = array(
 		"TimeLineHeader" => "Varchar",
 		"TimeLineIntro" => "HTMLText",
 		"JSON" => "Text"
 	);
 
-	public static $many_many = array(
+	private static $many_many = array(
 		"WebPortfolioItems" => "WebPortfolioItem"
 	);
 
 
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
-		$fields->addFieldToTab("Root.Content.Portfolio", new TextField("TimeLineHeader", "Time line header"));
-		$fields->addFieldToTab("Root.Content.Portfolio", new HTMLEditorField("TimeLineIntro", "Time line intro", 3));
-		$itemOptionSet = DataObject::get("WebPortfolioItem");
-		$itemOptionSetMap = ($itemOptionSet) ? $itemOptionSet->map('ID', 'Title') : array();
-		$fields->addFieldsToTab("Root.Content.Portfolio",
+		$fields->addFieldToTab("Root.Portfolio", new TextField("TimeLineHeader", "Time line header"));
+		$fields->addFieldToTab("Root.Portfolio", new HtmlEditorField("TimeLineIntro", "Time line intro"));
+		$itemOptionSet = WebPortfolioItem::get();
+		$itemOptionSetMap = ($itemOptionSet->count()) ? $itemOptionSet->map('ID', 'Title')->toArray() : array();
+		$fields->addFieldsToTab("Root.Portfolio",
 			array(
 				new LiteralField("UpdatePortfolio", "<h3>Update Portfolio</h3>"),
 				new LiteralField("EditPortfolio", "<p><a href=\"/admin/webportfolio\" target=\"_blank\">edit portfolio</a></p>"),
@@ -131,7 +131,7 @@ class WebPortfolioPageTimeLine extends Page {
 class WebPortfolioPageTimeLine_Controller extends Page_Controller {
 
 
-	protected static $ajax_file_location = "webportfolio/javascript/timeline-executive.js";
+	private static $ajax_file_location = "webportfolio/javascript/timeline-executive.js";
 		static function set_ajax_file_location($s){self::$ajax_file_location = $s;}
 		static function get_ajax_file_location(){return self::$ajax_file_location;}
 

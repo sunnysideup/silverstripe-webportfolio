@@ -1,5 +1,5 @@
 <a class="screenshotPopup" href="$Screenshot.Link" rel="prettyPhoto" title="website for $WebAddress">
-	<% control Screenshot.SetWidth(250) %><img width="250" height="188" alt="$Title.ATT" src="$Link"/><% end_control %>
+	<% with/loop Screenshot.SetWidth(250) %><img width="250" height="188" alt="$Title.ATT" src="$Link"/><% end_with/loop %>
 </a>
 <div class="portFolioItem">
 
@@ -45,12 +45,12 @@
 
 	<% if WhatWeDid %>
 		<span class="whatWeDid"><strong>Work completed:</strong>
-			<% control WhatWeDid %><a href="$Link"<% if Description %> title="$Description.ATT"<% end_if %>>$Name</a><% if Last %>.<% else %>, <% end_if %><% end_control %>
+			<% with/loop WhatWeDid %><a href="$Link"<% if Description %> title="$Description.ATT"<% end_if %>>$Name</a><% if Last %>.<% else %>, <% end_if %><% end_with/loop %>
 		</span>
 	<% end_if %>
 
 	<% if Agent %>
-		<span class="agent"><strong>Agency:</strong> <% control Agent %><a href="$AgentWebAddress.URL" class="externalLink">$Name</a><% end_control %></span>
+		<span class="agent"><strong>Agency:</strong> <% with/loop Agent %><a href="$AgentWebAddress.URL" class="externalLink">$Name</a><% end_with/loop %></span>
 	<% end_if %>
 
 	<% if ScreenshotTaken %>

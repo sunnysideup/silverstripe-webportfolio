@@ -7,39 +7,39 @@
 
 class WebPortfolioWhatWeDidDescriptor extends DataObject {
 
-	public static $db = array(
+	private static $db = array(
 		"Name" => "Varchar(255)",
 		"Code" => "Varchar(255)",
 		"Description" => "Text"
 	);
 
-	public static $belongs_many_many = array(
+	private static $belongs_many_many = array(
 		"WebPortfolioItem" => "WebPortfolioItem"
 	);
 
-	public static $default_sort = "Name";
+	private static $default_sort = "Name";
 
-	public static $searchable_fields = array(
+	private static $searchable_fields = array(
 		"Name" => "PartialMatchFilter",
 		"Description" => "PartialMatchFilter"
 	);
 
-	public static $summary_fields = array(
+	private static $summary_fields = array(
 		"Name",
 		"Description"
 	);
 
-	public static $indexes = array(
+	private static $indexes = array(
 		"Code" => true
 	);
 
-	public static $singular_name = "What We Did Descriptor";
+	private static $singular_name = "What We Did Descriptor";
 
-	public static $plural_name = "What We Did Descriptors";
+	private static $plural_name = "What We Did Descriptors";
 
 	function Link() {
 		$link = '';
-		if($page = DataObject::get_one("WebPortfolioPage")) {
+		if($page = WebPortfolioPage::get()->first()) {
 			if(!$this->Code) {
 				$this->Code = $page->generateURLSegment($this->Name);
 				$this->write();
@@ -53,15 +53,17 @@ class WebPortfolioWhatWeDidDescriptor extends DataObject {
 		$fields = parent::getCMSFields();
 		$fields->removeByName("Code");
 		if($this->ID) {
-			$dos = DataObject::get("WebPortfolioWhatWeDidDescriptor", "WebPortfolioWhatWeDidDescriptor.ID <> ".$this->ID);
-			if($dos) {
-				$dosArray = $dos->toDropDownMap("ID", "Name", "-- do not merge --");
+			$dos = WebPortfolioWhatWeDidDescriptor::get()
+				->exclude(array("ID" => $this->ID));
+			if($dos->count()) {
+				$dosArray = array("" => "--- do not merge ---");
+				$dosArray += $dos->map("ID" => "Name")->toArray();
 				$fields->addFieldToTab("Root.Merge", new DropdownField("MergeID", "Merge <i>$this->Name</i> into:", $dosArray));
 			}
 		}
-		$dos = DataObject::get("WebPortfolioItem");
-		if($dos && $this->ID) {
-			$dosArray = $dos->toDropDownMap();
+		$dos = WebPortfolioItem::get();
+		if($dos->count() && $this->ID) {
+			$dosArray = $dos->map()->toArray();
 			$fields->addFieldsToTab(
 				"Root.WebPortfolioItem",
 				array(
@@ -102,13 +104,11 @@ class WebPortfolioWhatWeDidDescriptor extends DataObject {
 		if(isset($_REQUEST["MergeID"])) {
 			$mergeID = intval($_REQUEST["MergeID"]);
 			if($mergeID) {
-				$this->mergeInto = DataObject::get_by_id("WebPortfolioWhatWeDidDescriptor", $mergeID);
+				$this->mergeInto = WebPortfolioWhatWeDidDescriptor::get()->byID($mergeID);
 			}
 		}
-		if($page = DataObject::get_one("WebPortfolioPage")) {
+		if($page = WebPortfolioPage::get()->first()) {
 			$link = $page->Link().'show/'.$this->Code."/";
-		}
-		if($page = DataObject::get_one("WebPortfolioPage")) {
 			$this->Code = $page->generateURLSegment($this->Name);
 		}
 	}

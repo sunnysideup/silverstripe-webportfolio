@@ -12,7 +12,7 @@
 
 class WebPortfolioItem extends DataObject {
 
-	static $db = array(
+	private static $db = array(
 		"WebAddress" => "Varchar(255)",
 		"NoLongerActive" => "Boolean",
 		"NotPubliclyAvailable" => "Boolean",
@@ -29,28 +29,28 @@ class WebPortfolioItem extends DataObject {
 		"EndDate" => "Date"
 	);
 
-	static $has_one = array(
+	private static $has_one = array(
 		"Agent" => "WebPortfolioAgent",
 		"Screenshot" => "Image",
 	);
 
-	static $many_many = array(
+	private static $many_many = array(
 		"WhatWeDid" => "WebPortfolioWhatWeDidDescriptor",
 	);
 
-	static $belongs_many_many = array(
+	private static $belongs_many_many = array(
 		"WhatWeDid" => "WebPortfolioWhatWeDidDescriptor",
 	);
 
-	static $defaults = array(
+	private static $defaults = array(
 		"WebAddress" => "http",
 		"NoLongerActive" => false,
 		"Favourites" => false
 	);
 
-	public static $default_sort = "Favourites DESC, Created DESC";
+	private static $default_sort = "Favourites DESC, Created DESC";
 
-	public static $searchable_fields = array(
+	private static $searchable_fields = array(
 		"WebAddress",
 		"Client",
 		"NoLongerActive",
@@ -59,28 +59,28 @@ class WebPortfolioItem extends DataObject {
 		"Agent.Name"
 	);
 
-	public static $summary_fields = array(
+	private static $summary_fields = array(
 		"WebAddress",
 		"Client",
 		"Thumbnail"
 	);
 
-	public static $casting = array(
+	private static $casting = array(
 		"Title" => "Varchar",
 		"Thumbnail" => "HTMLText",
 		"HeadLine" => "Varchar"
 	);
 
-	public static $singular_name = "Item";
+	private static $singular_name = "Item";
 
-	public static $plural_name = "Items";
+	private static $plural_name = "Items";
 
 
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
-		$dos = DataObject::get("WebPortfolioWhatWeDidDescriptor");
-		if($dos && $this->ID) {
-			$dosArray = $dos->toDropDownMap();
+		$dos = WebPortfolioWhatWeDidDescriptor::get();
+		if($dos->count() && $this->ID) {
+			$dosArray = $dos->map()->toArray();
 			$fields->addFieldsToTab(
 				"Root.WhatWeDid",
 				array(
@@ -139,7 +139,8 @@ class WebPortfolioItem extends DataObject {
 		if(isset($_REQUEST["AddWhatWeDid"])) {
 			$name = Convert::raw2sql($_REQUEST["AddWhatWeDid"]);
 			if($name) {
-				$this->newWhatWeDid = DataObject::get_one("WebPortfolioWhatWeDidDescriptor", "\"Name\" = '$name'");
+				$this->newWhatWeDid = WebPortfolioWhatWeDidDescriptor::get()
+					->filter(array("Name" => $name))->first();
 				if(!$this->newWhatWeDid) {
 					$this->newWhatWeDid = new WebPortfolioWhatWeDidDescriptor();
 					$this->newWhatWeDid->Name = $name;
@@ -158,7 +159,7 @@ class WebPortfolioItem extends DataObject {
 
 	function Link(){
 		$link = "";
-		$page = DataObject::get_one("WebPortfolioPage");
+		$page = WebPortfolioPage::get()->first();
 		if($page) {
 			$link = $page->Link("show/".$this->ID."/");
 		}
