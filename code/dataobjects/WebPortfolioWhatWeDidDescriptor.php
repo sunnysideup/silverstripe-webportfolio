@@ -57,7 +57,7 @@ class WebPortfolioWhatWeDidDescriptor extends DataObject {
 				->exclude(array("ID" => $this->ID));
 			if($dos->count()) {
 				$dosArray = array("" => "--- do not merge ---");
-				$dosArray += $dos->map("ID" => "Name")->toArray();
+				$dosArray += $dos->map("ID", "Name")->toArray();
 				$fields->addFieldToTab("Root.Merge", new DropdownField("MergeID", "Merge <i>$this->Name</i> into:", $dosArray));
 			}
 		}
