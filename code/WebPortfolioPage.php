@@ -45,6 +45,10 @@ class WebPortfolioPage extends Page {
 
 class WebPortfolioPage_Controller extends Page_Controller {
 
+	private static $allowed_actions = array(
+		"show"
+	);
+
 	function init() {
 		parent::init();
 		Requirements::javascript(THIRDPARTY_DIR."/jquery/jquery.js");
@@ -55,7 +59,7 @@ class WebPortfolioPage_Controller extends Page_Controller {
 			user_error("It is recommended that you include the PrettyPhoto Module", E_USER_NOTICE);
 		}
 		Requirements::javascript("webportfolio/javascript/webportfolio.js");
-		Requirements::themedCSS("WebPortfolioPage");
+		Requirements::themedCSS("WebPortfolioPage", "webportfolio");
 
 	}
 

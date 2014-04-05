@@ -1,7 +1,7 @@
 <div id="webPortfolioItemOuter$ID" class="webPortfolioItemOuter">
 <% if Screenshot %>
 	<a href="$Link" rel="prettyPhoto" class="screenshotLink">
-		<% with/loop Screenshot.SetWidth(250) %><img width="250" alt="$Title.ATT" src="$Link" /><% end_with/loop %>
+		<% with Screenshot.SetWidth(250) %><img width="250" alt="$Title.ATT" src="$Link" /><% end_with %>
 	</a>
 <% end_if %>
 <div class="portFolioItem">
@@ -35,12 +35,12 @@
 
 	<% if WhatWeDid %>
 		<span class="whatWeDid"><strong>Work completed:</strong>
-			<% with/loop WhatWeDid %><a href="$Link"<% if Description %> title="$Description.ATT"<% end_if %>>$Name</a><% if Last %>.<% else %>, <% end_if %><% end_with/loop %>
+			<% loop WhatWeDid %><a href="$Link"<% if Description %> title="$Description.ATT"<% end_if %>>$Name</a><% if Last %>.<% else %>, <% end_if %><% end_loop %>
 		</span>
 	<% end_if %>
 
 	<% if Agent %>
-		<span class="agent"><strong>Agency:</strong> <% with/loop Agent %><a href="$AgentWebAddress.URL">$Name</a><% end_with/loop %></span>
+		<span class="agent"><strong>Agency:</strong> <% with Agent %><a href="$AgentWebAddress.URL">$Name</a><% end_with %></span>
 	<% end_if %>
 
 	<% if ScreenshotTaken %>

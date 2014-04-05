@@ -146,7 +146,7 @@ class WebPortfolioPageTimeLine_Controller extends Page_Controller {
 		}
 		Requirements::javascript(self::get_ajax_file_location());
 		Requirements::javascript("webportfolio/thirdparty/TimelineJS/compiled/js/storyjs-embed.js");
-		Requirements::themedCSS("WebPortfolioPageTimeLine");
+		Requirements::themedCSS("WebPortfolioPageTimeLine", "webportfolio");
 	}
 
 	function json($request){
