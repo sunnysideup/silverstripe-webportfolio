@@ -130,10 +130,11 @@ class WebPortfolioPageTimeLine extends Page {
 
 class WebPortfolioPageTimeLine_Controller extends Page_Controller {
 
+	private static $allowed_actions = array(
+		"json"
+	);
 
 	private static $ajax_file_location = "webportfolio/javascript/timeline-executive.js";
-		static function set_ajax_file_location($s){self::$ajax_file_location = $s;}
-		static function get_ajax_file_location(){return self::$ajax_file_location;}
 
 	function init() {
 		parent::init();
@@ -144,7 +145,7 @@ class WebPortfolioPageTimeLine_Controller extends Page_Controller {
 		else {
 			user_error("It is recommended that you include the PrettyPhoto Module", E_USER_NOTICE);
 		}
-		Requirements::javascript(self::get_ajax_file_location());
+		Requirements::javascript($this->Config()->get("ajax_file_location"));
 		Requirements::javascript("webportfolio/thirdparty/TimelineJS/compiled/js/storyjs-embed.js");
 		Requirements::themedCSS("WebPortfolioPageTimeLine", "webportfolio");
 	}
