@@ -1,6 +1,5 @@
-###############################################
 Web Portfolio
-###############################################
+================================================================================
 
 Add a portfolio to a silvertripe website.  You can
 add a portfolio by tag / keyword and as a timeline.
