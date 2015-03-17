@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="WebPortfolioPage_Controller" namespace="" name="WebPortfolioPage_Controller" abstract="false" final="false" start="46" end="151">
+  <file path="/var/www/_modules/webportfolio/trunk/docs/en/phpdox/../../../code" file="WebPortfolioPage.php" realpath="/var/www/_modules/webportfolio/trunk/code/WebPortfolioPage.php" size="4143" time="2015-03-14T10:22:20+13:00" unixtime="1426281740" sha1="b9dfbb39480eff37b2f524e70e7c59d0e08a1648" relative="code/WebPortfolioPage.php"/>
+  <extends full="Page_Controller" namespace="" name="Page_Controller"/>
+  <member name="allowed_actions" type="array" visibility="private" line="48"/>
+  <method name="init" start="52" end="64" abstract="false" final="false" static="false" visibility="public"/>
+  <member name="IDArray" type="array" visibility="protected" line="66"/>
+  <member name="hasFilter" type="{unknown}" default="false" visibility="protected" line="67"/>
+  <member name="currentCode" type="string" default="&quot;&quot;" visibility="protected" line="68"/>
+  <method name="index" start="70" end="73" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="show" start="75" end="98" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="SelectedWebPortfolioItems" start="100" end="131" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="HasFilter" start="133" end="135" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="FilterList" start="137" end="149" abstract="false" final="false" static="false" visibility="public"/>
+</class>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="WebPortfolioPage" namespace="" name="WebPortfolioPage" abstract="false" final="false" start="12" end="44">
+  <file path="/var/www/_modules/webportfolio/trunk/docs/en/phpdox/../../../code" file="WebPortfolioPage.php" realpath="/var/www/_modules/webportfolio/trunk/code/WebPortfolioPage.php" size="4143" time="2015-03-14T10:22:20+13:00" unixtime="1426281740" sha1="b9dfbb39480eff37b2f524e70e7c59d0e08a1648" relative="code/WebPortfolioPage.php"/>
+  <docblock>
+    <description/>
+    <author value="Nicolaas [at] sunnysideup.co.nz"/>
+    <package value="webportfolio"/>
+    <sub value="-packages webportfolio"/>
+  </docblock>
+  <extends full="Page" namespace="" name="Page"/>
+  <member name="icon" type="string" default="&quot;webportfolio/images/treeicons/WebPortfolioPage&quot;" visibility="private" line="14"/>
+  <member name="db" type="array" visibility="private" line="16"/>
+  <member name="has_one" type="array" visibility="private" line="18"/>
+  <member name="many_many" type="array" visibility="private" line="20"/>
+  <method name="getCMSFields" start="24" end="41" abstract="false" final="false" static="false" visibility="public"/>
+</class>

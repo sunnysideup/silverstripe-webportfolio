@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="WebPortfolioPageTimeLine" namespace="" name="WebPortfolioPageTimeLine" abstract="false" final="false" start="12" end="129">
+  <file path="/var/www/_modules/webportfolio/trunk/docs/en/phpdox/../../../code" file="WebPortfolioPageTimeLine.php" realpath="/var/www/_modules/webportfolio/trunk/code/WebPortfolioPageTimeLine.php" size="4440" time="2015-03-14T10:22:20+13:00" unixtime="1426281740" sha1="dc09c966caed73ed89cc0c517718a6e560a52da4" relative="code/WebPortfolioPageTimeLine.php"/>
+  <docblock>
+    <description/>
+    <author value="Nicolaas [at] sunnysideup.co.nz"/>
+    <package value="webportfolio"/>
+    <sub value="-packages webportfolio"/>
+  </docblock>
+  <extends full="Page" namespace="" name="Page"/>
+  <member name="icon" type="string" default="&quot;webportfolio/images/treeicons/WebPortfolioPageTimeLine&quot;" visibility="private" line="14"/>
+  <member name="db" type="array" visibility="private" line="16"/>
+  <member name="many_many" type="array" visibility="private" line="22"/>
+  <method name="getCMSFields" start="27" end="47" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="createJSON" start="49" end="117" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="'.$this-&gt;html2json($this-&gt;TimeLineIntro).'';//" line="59"/>
+      <comment value="&quot;asset&quot;: {" line="60"/>
+      <comment value="&quot;media&quot;:&quot;http://yourdomain_or_socialmedialink_goes_here.jpg&quot;," line="61"/>
+      <comment value="&quot;credit&quot;:&quot;Credit Name Goes Here&quot;," line="62"/>
+      <comment value="&quot;caption&quot;:&quot;Caption text goes here&quot;" line="63"/>
+      <comment value="}," line="64"/>
+      <comment value="//" line="80"/>
+      <comment value="&quot;era&quot;: [" line="93"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="{" line="94"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="&quot;startDate&quot;:&quot;2011,12,10&quot;," line="95"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="&quot;endDate&quot;:&quot;2011,12,11&quot;," line="96"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="&quot;headline&quot;:&quot;Headline Goes Here&quot;," line="97"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="&quot;text&quot;:&quot;&lt;p&gt;Body text goes here, some HTML is OK&lt;/p&gt;&quot;," line="98"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="&quot;tag&quot;:&quot;This is Optional&quot;" line="99"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="}" line="100"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="]" line="101"/>
+    </inline>
+  </method>
+  <method name="html2json" start="119" end="126" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="html" byreference="false" type="{unknown}"/>
+  </method>
+</class>

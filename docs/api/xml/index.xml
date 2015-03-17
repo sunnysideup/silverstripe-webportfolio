@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index xmlns="http://xml.phpdox.net/src" basedir="/var/www/_modules/webportfolio/trunk">
+  <namespace name="">
+    <class name="WebPortfolioPage" src="code/WebPortfolioPage.php" xml="classes/WebPortfolioPage.xml"/>
+    <class name="WebPortfolioPage_Controller" src="code/WebPortfolioPage.php" xml="classes/WebPortfolioPage_Controller.xml"/>
+    <class name="WebPortfolioPageTimeLine" src="code/WebPortfolioPageTimeLine.php" xml="classes/WebPortfolioPageTimeLine.xml"/>
+    <class name="WebPortfolioPageTimeLine_Controller" src="code/WebPortfolioPageTimeLine.php" xml="classes/WebPortfolioPageTimeLine_Controller.xml"/>
+    <class name="WebPortfolioAgent" src="code/dataobjects/WebPortfolioAgent.php" xml="classes/WebPortfolioAgent.xml"/>
+    <class name="WebPortfolioWhatWeDidDescriptor" src="code/dataobjects/WebPortfolioWhatWeDidDescriptor.php" xml="classes/WebPortfolioWhatWeDidDescriptor.xml"/>
+    <class name="WebPortfolioAdmin" src="code/dataobjects/WebPortfolioAdmin.php" xml="classes/WebPortfolioAdmin.xml"/>
+    <class name="WebPortfolioItem" src="code/dataobjects/WebPortfolioItem.php" xml="classes/WebPortfolioItem.xml"/>
+  </namespace>
+</index>
