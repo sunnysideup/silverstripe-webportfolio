@@ -4,7 +4,7 @@
 <div class="portFolioItem">
 
 	<span class="notes">
-		<% if NoLongerAvailable %>
+		<% if NoLongerActive %>
 			<a href="#" class="webPortfolioShowMore" rel="WebPortfolioItem$ID">This site</a> (for $Client) is no longer available.
 		<% else %>
 			<% if NotPubliclyAvailable %>
@@ -58,7 +58,7 @@
 	<% end_if %>
 
 	<span class="visit">
-		<% if NoLongerAvailable %>
+		<% if NoLongerActive %>
 		<% else %>
 			<% if NotPubliclyAvailable %>
 			<% else %>

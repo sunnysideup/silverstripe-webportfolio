@@ -48,7 +48,7 @@
 	<% end_if %>
 
 	<span class="visit">
-		<% if NoLongerAvailable %>
+		<% if NoLongerActive %>
 		<% else %>
 			<% if NotPubliclyAvailable %>
 			<% else %>
