@@ -29,7 +29,7 @@ class WebPortfolioPage extends Page {
 			array(
 				new LiteralField("UpdatePortfolio", "<h3>Update Portfolio</h3>"),
 				new LiteralField("EditPortfolio", "<p><a href=\"/admin/webportfolio\" target=\"_blank\">edit portfolio</a></p>"),
-				new LiteralField("RefreshPortfolio", "<p><a href=\"".$this->Link("json/?flush=json")."\" target=\"_blank\">clear portfolio cache</a> (portfolio data is cached to incrase loading speed)</p>"),
+				new LiteralField("RefreshPortfolio", "<p><a href=\"".$this->Link("json/?flush=json")."\" target=\"_blank\">clear portfolio cache</a> (portfolio data is cached to increase loading speed)</p>"),
 				new CheckboxSetField(
 					$name = "WebPortfolioItems",
 					$title = "Items shown",
