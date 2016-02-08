@@ -66,6 +66,7 @@ class WebPortfolioPage_Controller extends Page_Controller {
 	protected $IDArray = array();
 	protected $hasFilter = false;
 	protected $currentCode = "";
+	protected $currentDescription = "";
 
 	function index(){
 		$this->Title .= " - Favourites";
@@ -81,6 +82,7 @@ class WebPortfolioPage_Controller extends Page_Controller {
 			if($item) {
 				$this->IDArray = array($item->ID => $item->ID);
 				$this->Title .= " - ".$item->getHeadLine();
+				$this->currentDescription = $item->Notes;
 			}
 		}
 		elseif($code) {
@@ -88,6 +90,7 @@ class WebPortfolioPage_Controller extends Page_Controller {
 			$obj = WebPortfolioWhatWeDidDescriptor::get()->filter(array("Code" => $code))->first();
 			$this->Title .= " - ".$obj->Name;
 			if($obj) {
+				$this->currentDescription = $obj->Description;
 				$components = $obj->getManyManyComponents('WebPortfolioItem');
 				if($components && $components->count()) {
 					$this->IDArray = $components->column("ID");
@@ -134,6 +137,10 @@ class WebPortfolioPage_Controller extends Page_Controller {
 		return $this->hasFilter;
 	}
 
+	function CurrentDescription(){
+		return $this->currentDescription;
+	}
+
 	function FilterList() {
 		$items = WebPortfolioWhatWeDidDescriptor::get()
 			->innerJoin("WebPortfolioItem_WhatWeDid", " \"WebPortfolioItem_WhatWeDid\".\"WebPortfolioWhatWeDidDescriptorID\" = \"WebPortfolioWhatWeDidDescriptor\".\"ID\"");
@@ -147,5 +154,6 @@ class WebPortfolioPage_Controller extends Page_Controller {
 		}
 		return $items;
 	}
+
 
 }

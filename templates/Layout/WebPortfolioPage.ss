@@ -18,6 +18,7 @@
 <div id="MainContentSection">
 	<h1 id="PageTitle">$Title</h1>
 	$Content
+	<% if currentDescription %><p><em>$CurrentDescription</em></p><% end_if %>
 </div>
 <% if SelectedWebPortfolioItems %>
 <ul id="WebPortfolioItems">

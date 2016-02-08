@@ -90,14 +90,17 @@ class WebPortfolioItem extends DataObject {
 			);
 		}
 		if(class_exists("DataObjectOneFieldUpdateController")) {
-			$link = DataObjectOneFieldUpdateController::popup_link(
-				$ClassName = $this->ClassName,
-				$FieldName = "Favourites",
-				$where = '',
-				$sort = 'Favourites DESC',
-				$linkText = 'Select Favourites'
-			);
-			$fields->addFieldToTab("Root.Main", new LiteralField("SelectFavourites", $link), "Favourites");
+			$editableFields = array_keys($this->Config()->get("db"));
+			foreach($editableFields as $editableField) {
+				$link = DataObjectOneFieldUpdateController::popup_link(
+					$ClassName = $this->ClassName,
+					$FieldName = $editableField,
+					$where = '',
+					$sort = '"'.$editableField.'" DESC',
+					$linkText = $editableField
+				);
+				$fields->addFieldToTab("Root.QuickEdits", new LiteralField("QuickEdit".$editableField, "<h2>".$link."</h2>"));
+			}
 		}
 		return $fields;
 	}
