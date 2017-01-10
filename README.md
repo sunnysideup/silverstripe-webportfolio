@@ -1,38 +1,72 @@
-Web Portfolio
-================================================================================
+# Silverstripe webportfolio module
+[![Build Status](https://travis-ci.org/sunnysideup/silverstripe-webportfolio.svg?branch=master)](https://travis-ci.org/sunnysideup/silverstripe-webportfolio)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-webportfolio/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-webportfolio/?branch=master)
+[![codecov.io](https://codecov.io/github/sunnysideup/silverstripe-webportfolio/coverage.svg?branch=master)](https://codecov.io/github/sunnysideup/silverstripe-webportfolio?branch=master)
+![helpfulrobot](https://helpfulrobot.io/sunnysideup/webportfolio/badge)
 
-Add a portfolio to a silvertripe website.  You can
-add a portfolio by tag / keyword and as a timeline.
-
-
-Developer
------------------------------------------------
-Nicolaas Francken [at] sunnysideup.co.nz
-
-
-Requirements
------------------------------------------------
-see composer.json
+[![Latest Stable Version](https://poser.pugx.org/sunnysideup/webportfolio/version)](https://packagist.org/packages/sunnysideup/webportfolio)
+[![License](https://poser.pugx.org/sunnysideup/webportfolio/license)](https://packagist.org/packages/sunnysideup/webportfolio)
+[![Monthly Downloads](https://poser.pugx.org/sunnysideup/webportfolio/d/monthly)](https://packagist.org/packages/sunnysideup/webportfolio)
 
 
-Documentation
------------------------------------------------
-Please contact author for more details.
-
-Any bug reports and/or feature requests will be
-looked at
-
-We are also very happy to provide personalised support
-for this module in exchange for a small donation.
+## Documentation
 
 
-Installation Instructions
------------------------------------------------
 
-1. Find out how to add modules to SS and add module as per usual.
+ * [Developer Docs](docs/en/INDEX.md)
+ * [User Guide](docs/en/userguide.md)
+ * [API](http://ssmods.com/apis/webportfolio/docs/en/api/)
 
-2. Review configs and add entries to mysite/_config/config.yml
-(or similar) as necessary.
-In the _config/ folder of this module
-you can usually find some examples of config options (if any).
+## Requirements
 
+
+
+see [composer.json](composer.json) for details
+
+### Suggested Modules
+
+
+
+see [composer.json](composer.json) for details
+
+
+## Installation
+
+
+```
+composer require sunnysideup/webportfolio
+```
+
+### Configuration
+
+
+
+In the `_config` folder you will find the `webportfolio.yml.example`
+file that shows options for the configuration of this module.
+
+We recommend that you:
+
+  1. copy these `webportfolio.yml.example` files into your
+`mysite/_config` folder
+  2. remove the .example extension
+  3. delete the lines you not care about, and
+  4. adjust the configurations that you would like to use.
+
+
+## Contributing
+
+
+
+We welcome any contributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
+
+## Paid assistance
+
+
+
+You can pay us to create an improved / adapted version of this module for your own projects.  Please contact us if you like to find out more: [www.sunnysideup.co.nz](http://www.sunnysideup.co.nz)
+
+## Author
+
+
+
+Sunny Side Up Ltd.
