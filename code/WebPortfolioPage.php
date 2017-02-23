@@ -13,7 +13,9 @@ class WebPortfolioPage extends Page
 {
     private static $icon = "webportfolio/images/treeicons/WebPortfolioPage";
 
-    private static $db = array();
+    private static $db = array(
+        'HighlightsOnly' => 'Boolean'
+    );
 
     private static $has_one = array();
 
@@ -28,10 +30,14 @@ class WebPortfolioPage extends Page
         $itemOptionSetMap = ($itemOptionSet->count()) ? $itemOptionSet->map('ID', 'Title')->toArray() : array();
         $fields->addFieldsToTab("Root.Portfolio",
             array(
-                new LiteralField("UpdatePortfolio", "<h3>Update Portfolio</h3>"),
-                new LiteralField("EditPortfolio", "<p><a href=\"/admin/webportfolio\" target=\"_blank\">edit portfolio</a></p>"),
-                new LiteralField("RefreshPortfolio", "<p><a href=\"".$this->Link("json/?flush=json")."\" target=\"_blank\">clear portfolio cache</a> (portfolio data is cached to increase loading speed)</p>"),
-                new CheckboxSetField(
+                CheckboxField::create(
+                    'HighlightsOnly',
+                    'Highlights Only'
+                ),
+                LiteralField::create("UpdatePortfolio", "<h3>Update Portfolio</h3>"),
+                LiteralField::create("EditPortfolio", "<p><a href=\"/admin/webportfolio\" target=\"_blank\">edit portfolio</a></p>"),
+                LiteralField::create("RefreshPortfolio", "<p><a href=\"".$this->Link("json/?flush=json")."\" target=\"_blank\">clear portfolio cache</a> (portfolio data is cached to increase loading speed)</p>"),
+                CheckboxSetField::create(
                     $name = "WebPortfolioItems",
                     $title = "Items shown",
                     $source = $itemOptionSetMap
@@ -101,6 +107,10 @@ class WebPortfolioPage_Controller extends Page_Controller
 
     public function SelectedWebPortfolioItems()
     {
+        if($this->HighlightsOnly) {
+            return $this->WebPortfolioItems()
+                ->sort(array("Favourites" => "DESC", "RAND()" => "ASC"));
+        }
         if ($this->hasFilter) {
         } else {
             $components = $this->getManyManyComponents('WebPortfolioItems');
@@ -141,6 +151,9 @@ class WebPortfolioPage_Controller extends Page_Controller
 
     public function FilterList()
     {
+        if($this->HighlightsOnly) {
+            return null;
+        }
         $items = WebPortfolioWhatWeDidDescriptor::get()
             ->innerJoin("WebPortfolioItem_WhatWeDid", " \"WebPortfolioItem_WhatWeDid\".\"WebPortfolioWhatWeDidDescriptorID\" = \"WebPortfolioWhatWeDidDescriptor\".\"ID\"");
         foreach ($items as $item) {
