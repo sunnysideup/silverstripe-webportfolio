@@ -74,7 +74,9 @@ class WebPortfolioPage_Controller extends Page_Controller
 
     public function index()
     {
-        $this->Title .= " - Favourites";
+        if(!$this->HighlightsOnly) {
+            $this->Title .= " - Favourites";
+        }
         return array();
     }
 
