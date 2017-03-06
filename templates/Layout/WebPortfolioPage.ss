@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 <main class="main-section content-container with-sidebar typography">
     <div class="typography content-padding">
         <div id="MainContentSection" >
@@ -32,7 +23,7 @@
 <aside>
     <div id="Sidebar" class="typography content-padding">
         <div class="sidebarTop"></div>
-        <% if FilterList %>
+        <% if $FilterList %>
             <div class="sidebarBox filterList">
                 <ul>
                     <li class="<% if HasFilter %>link<% else %>current<% end_if %>"><a href="$Link">favourites</a></li>
