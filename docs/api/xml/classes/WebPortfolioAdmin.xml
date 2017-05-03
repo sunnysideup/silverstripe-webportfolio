@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="WebPortfolioAdmin" namespace="" name="WebPortfolioAdmin" abstract="false" final="false" start="3" end="15">
-  <file path="/var/www/_modules/webportfolio/trunk/docs/en/phpdox/../../../code/dataobjects" file="WebPortfolioAdmin.php" realpath="/var/www/_modules/webportfolio/trunk/code/dataobjects/WebPortfolioAdmin.php" size="331" time="2015-03-14T10:22:20+13:00" unixtime="1426281740" sha1="77bf2537d518b6bfe337ab035bd824a8eaecbf6e" relative="code/dataobjects/WebPortfolioAdmin.php"/>
-  <extends full="ModelAdmin" namespace="" name="ModelAdmin"/>
-  <member name="managed_models" type="array" visibility="private" line="5"/>
-  <member name="url_segment" type="string" default="'webportfolio'" visibility="private" line="11"/>
-  <member name="menu_title" type="string" default="'Web Portfolio'" visibility="private" line="13"/>
-</class>
