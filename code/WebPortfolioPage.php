@@ -28,7 +28,8 @@ class WebPortfolioPage extends Page
         $fields = parent::getCMSFields();
         $itemOptionSet = WebPortfolioItem::get();
         $itemOptionSetMap = ($itemOptionSet->count()) ? $itemOptionSet->map('ID', 'Title')->toArray() : array();
-        $fields->addFieldsToTab("Root.Portfolio",
+        $fields->addFieldsToTab(
+            "Root.Portfolio",
             array(
                 CheckboxField::create(
                     'HighlightsOnly',
@@ -74,7 +75,7 @@ class WebPortfolioPage_Controller extends Page_Controller
 
     public function index()
     {
-        if(!$this->HighlightsOnly) {
+        if (!$this->HighlightsOnly) {
             $this->Title .= " - Favourites";
         }
         return array();
@@ -109,7 +110,7 @@ class WebPortfolioPage_Controller extends Page_Controller
 
     public function SelectedWebPortfolioItems()
     {
-        if($this->HighlightsOnly) {
+        if ($this->HighlightsOnly) {
             return $this->WebPortfolioItems()
                 ->sort(array("Favourites" => "DESC", "RAND()" => "ASC"));
         }
@@ -153,7 +154,7 @@ class WebPortfolioPage_Controller extends Page_Controller
 
     public function FilterList()
     {
-        if($this->HighlightsOnly) {
+        if ($this->HighlightsOnly) {
             return null;
         }
         $items = WebPortfolioWhatWeDidDescriptor::get()

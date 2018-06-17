@@ -31,7 +31,8 @@ class WebPortfolioPageTimeLine extends Page
         $fields->addFieldToTab("Root.Portfolio", new HtmlEditorField("TimeLineIntro", "Time line intro"));
         $itemOptionSet = WebPortfolioItem::get();
         $itemOptionSetMap = ($itemOptionSet->count()) ? $itemOptionSet->map('ID', 'Title')->toArray() : array();
-        $fields->addFieldsToTab("Root.Portfolio",
+        $fields->addFieldsToTab(
+            "Root.Portfolio",
             array(
                 new LiteralField("UpdatePortfolio", "<h3>Update Portfolio</h3>"),
                 new LiteralField("EditPortfolio", "<p><a href=\"/admin/webportfolio\" target=\"_blank\">edit portfolio</a></p>"),
@@ -58,12 +59,12 @@ class WebPortfolioPageTimeLine extends Page
 				"type":"default",
 				"text": '.$this->html2json($this->TimeLineIntro).',
 				"date": [';
-                //'.$this->html2json($this->TimeLineIntro).'';//
-                //"asset": {
-                //    "media":"http://yourdomain_or_socialmedialink_goes_here.jpg",
-                //    "credit":"Credit Name Goes Here",
-                //    "caption":"Caption text goes here"
-                //},
+        //'.$this->html2json($this->TimeLineIntro).'';//
+        //"asset": {
+        //    "media":"http://yourdomain_or_socialmedialink_goes_here.jpg",
+        //    "credit":"Credit Name Goes Here",
+        //    "caption":"Caption text goes here"
+        //},
 
         $data = $this->WebPortfolioItems();
         if ($data && $data->count()) {
@@ -90,18 +91,18 @@ class WebPortfolioPageTimeLine extends Page
                 }
             }
         }
-/*
-                "era": [
-                        {
-                                "startDate":"2011,12,10",
-                                "endDate":"2011,12,11",
-                                "headline":"Headline Goes Here",
-                                "text":"<p>Body text goes here, some HTML is OK</p>",
-                                "tag":"This is Optional"
-                        }
-
-                ]
-                */
+        /*
+                        "era": [
+                                {
+                                        "startDate":"2011,12,10",
+                                        "endDate":"2011,12,11",
+                                        "headline":"Headline Goes Here",
+                                        "text":"<p>Body text goes here, some HTML is OK</p>",
+                                        "tag":"This is Optional"
+                                }
+        
+                        ]
+                        */
         $json .='
 			]
 		}
