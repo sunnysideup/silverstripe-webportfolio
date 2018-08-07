@@ -1,4 +1,9 @@
 <?php
+
+namespace Sunnysideup\WebPortfolio;
+
+
+
 /**
  * @author nicolaas [at] www.sunnysideup.co.nz
 **/

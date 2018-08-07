@@ -1,5 +1,21 @@
 <?php
 
+namespace Sunnysideup\WebPortfolio;
+
+use Page;
+use TextField;
+use HtmlEditorField;
+use WebPortfolioItem;
+use LiteralField;
+use CheckboxSetField;
+use Config;
+use Convert;
+use Page_Controller;
+use Requirements;
+use PrettyPhoto;
+use Director;
+
+
 /**
  * @author Nicolaas [at] sunnysideup.co.nz
  * @package webportfolio

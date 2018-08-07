@@ -1,5 +1,10 @@
 <?php
 
+namespace Sunnysideup\WebPortfolio\Dataobjects;
+
+use ModelAdmin;
+
+
 class WebPortfolioAdmin extends ModelAdmin
 {
     private static $managed_models = array(

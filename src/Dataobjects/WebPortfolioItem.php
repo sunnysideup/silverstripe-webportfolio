@@ -1,5 +1,16 @@
 <?php
 
+namespace Sunnysideup\WebPortfolio\Dataobjects;
+
+use DataObject;
+use CheckboxSetField;
+use TextField;
+use DataObjectOneFieldUpdateController;
+use LiteralField;
+use Convert;
+use WebPortfolioPage;
+
+
  /**
  * @author Nicolaas [at] sunnysideup.co.nz
  *

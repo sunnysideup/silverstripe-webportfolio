@@ -1,4 +1,9 @@
 <?php
+
+namespace Sunnysideup\WebPortfolio\Dataobjects;
+
+use DataObject;
+
 /**
  * @author Nicolaas [at] sunnysideup.co.nz
  * @package Webquote

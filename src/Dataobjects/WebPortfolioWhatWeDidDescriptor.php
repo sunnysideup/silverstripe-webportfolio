@@ -1,4 +1,15 @@
 <?php
+
+namespace Sunnysideup\WebPortfolio\Dataobjects;
+
+use DataObject;
+use WebPortfolioPage;
+use DropdownField;
+use CheckboxSetField;
+use DataObjectOneFieldUpdateController;
+use LiteralField;
+use DB;
+
 /**
  * @author Nicolaas [at] sunnysideup.co.nz
  * @package Webquote
