@@ -1,8 +1,8 @@
 mappings:
-  WebPortfolioPageTimeLine: Sunnysideup\WebPortfolio\WebPortfolioPageTimeLine
-  WebPortfolioPageTimeLine_Controller: Sunnysideup\WebPortfolio\WebPortfolioPageTimeLine_Controller
-  WebPortfolioPage: Sunnysideup\WebPortfolio\WebPortfolioPage
-  WebPortfolioPage_Controller: Sunnysideup\WebPortfolio\WebPortfolioPage_Controller
+  WebPortfolioPageTimeLine: Sunnysideup\WebPortfolio\Pages\WebPortfolioPageTimeLine
+  WebPortfolioPageTimeLine_Controller: Sunnysideup\WebPortfolio\Pages\WebPortfolioPageTimeLine_Controller
+  WebPortfolioPage: Sunnysideup\WebPortfolio\Pages\WebPortfolioPage
+  WebPortfolioPage_Controller: Sunnysideup\WebPortfolio\Pages\WebPortfolioPage_Controller
   WebPortfolioItem: Sunnysideup\WebPortfolio\Models\WebPortfolioItem
   WebPortfolioWhatWeDidDescriptor: Sunnysideup\WebPortfolio\Models\WebPortfolioWhatWeDidDescriptor
   WebPortfolioAdmin: Sunnysideup\WebPortfolio\Models\WebPortfolioAdmin
