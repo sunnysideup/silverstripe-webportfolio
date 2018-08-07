@@ -1,4 +1,23 @@
 <?php
+
+namespace Sunnysideup\WebPortfolio\Models;
+
+
+
+
+
+use DataObjectOneFieldUpdateController;
+
+
+use Sunnysideup\WebPortfolio\Models\WebPortfolioItem;
+use Sunnysideup\WebPortfolio\Pages\WebPortfolioPage;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\CheckboxSetField;
+use SilverStripe\Forms\LiteralField;
+use SilverStripe\ORM\DB;
+use SilverStripe\ORM\DataObject;
+
+
 /**
  * @author Nicolaas [at] sunnysideup.co.nz
  * @package Webquote
@@ -7,6 +26,9 @@
 
 class WebPortfolioWhatWeDidDescriptor extends DataObject
 {
+
+    private static $table_name = 'WebPortfolioWhatWeDidDescriptor';
+
     private static $db = array(
         "Name" => "Varchar(255)",
         "Code" => "Varchar(255)",
@@ -14,7 +36,7 @@ class WebPortfolioWhatWeDidDescriptor extends DataObject
     );
 
     private static $belongs_many_many = array(
-        "WebPortfolioItem" => "WebPortfolioItem"
+        "WebPortfolioItem" => WebPortfolioItem::class
     );
 
     private static $default_sort = "Name";
@@ -69,7 +91,7 @@ class WebPortfolioWhatWeDidDescriptor extends DataObject
             $fields->addFieldsToTab(
                 "Root.WebPortfolioItem",
                 array(
-                    new CheckboxSetField("WebPortfolioItem", "Carried out for", $dosArray)
+                    new CheckboxSetField(WebPortfolioItem::class, "Carried out for", $dosArray)
                 )
             );
         }
