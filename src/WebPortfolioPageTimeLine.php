@@ -50,7 +50,7 @@ class WebPortfolioPageTimeLine extends Page
 
     public function createJSON()
     {
-        SSViewer::set_source_file_comments(false);
+        Config::inst()->set('SSViewer', 'source_file_comments', false);
         $json = '
 {
 		"timeline":
@@ -152,7 +152,7 @@ class WebPortfolioPageTimeLine_Controller extends Page_Controller
 
     public function json($request)
     {
-        SSViewer::set_source_file_comments(false);
+        Config::inst()->set('SSViewer', 'source_file_comments', false);
         if (isset($_GET['flush']) || !$this->JSON) {
             return $this->createJSON();
         }
