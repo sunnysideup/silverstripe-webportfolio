@@ -2,13 +2,23 @@
 
 namespace Sunnysideup\WebPortfolio\Dataobjects;
 
-use DataObject;
-use CheckboxSetField;
-use TextField;
+
+
+
 use DataObjectOneFieldUpdateController;
-use LiteralField;
-use Convert;
-use WebPortfolioPage;
+
+
+
+use Sunnysideup\WebPortfolio\Dataobjects\WebPortfolioAgent;
+use SilverStripe\Assets\Image;
+use Sunnysideup\WebPortfolio\Dataobjects\WebPortfolioWhatWeDidDescriptor;
+use SilverStripe\Forms\CheckboxSetField;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\LiteralField;
+use SilverStripe\Core\Convert;
+use Sunnysideup\WebPortfolio\WebPortfolioPage;
+use SilverStripe\ORM\DataObject;
+
 
 
  /**
@@ -41,16 +51,16 @@ class WebPortfolioItem extends DataObject
     );
 
     private static $has_one = array(
-        "Agent" => "WebPortfolioAgent",
-        "Screenshot" => "Image",
+        "Agent" => WebPortfolioAgent::class,
+        "Screenshot" => Image::class,
     );
 
     private static $many_many = array(
-        "WhatWeDid" => "WebPortfolioWhatWeDidDescriptor",
+        "WhatWeDid" => WebPortfolioWhatWeDidDescriptor::class,
     );
 
     private static $belongs_many_many = array(
-        "WhatWeDid" => "WebPortfolioWhatWeDidDescriptor",
+        "WhatWeDid" => WebPortfolioWhatWeDidDescriptor::class,
     );
 
     private static $defaults = array(

@@ -3,17 +3,29 @@
 namespace Sunnysideup\WebPortfolio;
 
 use Page;
-use TextField;
+
 use HtmlEditorField;
-use WebPortfolioItem;
-use LiteralField;
-use CheckboxSetField;
-use Config;
-use Convert;
-use Page_Controller;
-use Requirements;
+
+
+
+
+
+
+
 use PrettyPhoto;
-use Director;
+
+use Sunnysideup\WebPortfolio\Dataobjects\WebPortfolioItem;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\LiteralField;
+use SilverStripe\Forms\CheckboxSetField;
+use SilverStripe\Core\Config\Config;
+use SilverStripe\View\SSViewer;
+use SilverStripe\Core\Convert;
+use SilverStripe\View\Requirements;
+use Sunnysideup\WebPortfolio\WebPortfolioPageTimeLine;
+use SilverStripe\Control\Director;
+use PageController;
+
 
 
 /**
@@ -36,7 +48,7 @@ class WebPortfolioPageTimeLine extends Page
     );
 
     private static $many_many = array(
-        "WebPortfolioItems" => "WebPortfolioItem"
+        "WebPortfolioItems" => WebPortfolioItem::class
     );
 
 
@@ -66,7 +78,7 @@ class WebPortfolioPageTimeLine extends Page
 
     public function createJSON()
     {
-        Config::inst()->set('SSViewer', 'source_file_comments', false);
+        Config::inst()->set(SSViewer::class, 'source_file_comments', false);
         $json = '
 {
 		"timeline":
@@ -144,7 +156,7 @@ class WebPortfolioPageTimeLine extends Page
     }
 }
 
-class WebPortfolioPageTimeLine_Controller extends Page_Controller
+class WebPortfolioPageTimeLine_Controller extends PageController
 {
     private static $allowed_actions = array(
         "json"
@@ -163,12 +175,12 @@ class WebPortfolioPageTimeLine_Controller extends Page_Controller
         }
         Requirements::javascript($this->Config()->get("ajax_file_location"));
         Requirements::javascript("webportfolio/thirdparty/TimelineJS/compiled/js/storyjs-embed.js");
-        Requirements::themedCSS("WebPortfolioPageTimeLine", "webportfolio");
+        Requirements::themedCSS(WebPortfolioPageTimeLine::class, "webportfolio");
     }
 
     public function json($request)
     {
-        Config::inst()->set('SSViewer', 'source_file_comments', false);
+        Config::inst()->set(SSViewer::class, 'source_file_comments', false);
         if (isset($_GET['flush']) || !$this->JSON) {
             return $this->createJSON();
         }

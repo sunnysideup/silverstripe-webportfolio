@@ -2,13 +2,21 @@
 
 namespace Sunnysideup\WebPortfolio\Dataobjects;
 
-use DataObject;
-use WebPortfolioPage;
-use DropdownField;
-use CheckboxSetField;
+
+
+
+
 use DataObjectOneFieldUpdateController;
-use LiteralField;
-use DB;
+
+
+use Sunnysideup\WebPortfolio\Dataobjects\WebPortfolioItem;
+use Sunnysideup\WebPortfolio\WebPortfolioPage;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\CheckboxSetField;
+use SilverStripe\Forms\LiteralField;
+use SilverStripe\ORM\DB;
+use SilverStripe\ORM\DataObject;
+
 
 /**
  * @author Nicolaas [at] sunnysideup.co.nz
@@ -25,7 +33,7 @@ class WebPortfolioWhatWeDidDescriptor extends DataObject
     );
 
     private static $belongs_many_many = array(
-        "WebPortfolioItem" => "WebPortfolioItem"
+        "WebPortfolioItem" => WebPortfolioItem::class
     );
 
     private static $default_sort = "Name";
@@ -80,7 +88,7 @@ class WebPortfolioWhatWeDidDescriptor extends DataObject
             $fields->addFieldsToTab(
                 "Root.WebPortfolioItem",
                 array(
-                    new CheckboxSetField("WebPortfolioItem", "Carried out for", $dosArray)
+                    new CheckboxSetField(WebPortfolioItem::class, "Carried out for", $dosArray)
                 )
             );
         }

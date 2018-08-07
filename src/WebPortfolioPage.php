@@ -3,15 +3,25 @@
 namespace Sunnysideup\WebPortfolio;
 
 use Page;
-use WebPortfolioItem;
-use CheckboxField;
-use LiteralField;
-use CheckboxSetField;
-use Page_Controller;
-use Requirements;
+
+
+
+
+
+
 use PrettyPhoto;
-use Convert;
-use WebPortfolioWhatWeDidDescriptor;
+
+
+use Sunnysideup\WebPortfolio\Dataobjects\WebPortfolioItem;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\LiteralField;
+use SilverStripe\Forms\CheckboxSetField;
+use SilverStripe\View\Requirements;
+use Sunnysideup\WebPortfolio\WebPortfolioPage;
+use SilverStripe\Core\Convert;
+use Sunnysideup\WebPortfolio\Dataobjects\WebPortfolioWhatWeDidDescriptor;
+use PageController;
+
 
 
 /**
@@ -34,7 +44,7 @@ class WebPortfolioPage extends Page
     private static $has_one = array();
 
     private static $many_many = array(
-        "WebPortfolioItems" => "WebPortfolioItem"
+        "WebPortfolioItems" => WebPortfolioItem::class
     );
 
     public function getCMSFields()
@@ -63,7 +73,7 @@ class WebPortfolioPage extends Page
     }
 }
 
-class WebPortfolioPage_Controller extends Page_Controller
+class WebPortfolioPage_Controller extends PageController
 {
     private static $allowed_actions = array(
         "show"
@@ -79,7 +89,7 @@ class WebPortfolioPage_Controller extends Page_Controller
             user_error("It is recommended that you include the PrettyPhoto Module", E_USER_NOTICE);
         }
         Requirements::javascript("webportfolio/javascript/webportfolio.js");
-        Requirements::themedCSS("WebPortfolioPage", "webportfolio");
+        Requirements::themedCSS(WebPortfolioPage::class, "webportfolio");
     }
 
     protected $IDArray = array();
@@ -113,7 +123,7 @@ class WebPortfolioPage_Controller extends Page_Controller
             $this->Title .= " - ".$obj->Name;
             if ($obj) {
                 $this->currentDescription = $obj->Description;
-                $components = $obj->getManyManyComponents('WebPortfolioItem');
+                $components = $obj->getManyManyComponents(WebPortfolioItem::class);
                 if ($components && $components->count()) {
                     $this->IDArray = $components->column("ID");
                 }

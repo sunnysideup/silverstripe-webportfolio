@@ -2,7 +2,10 @@
 
 namespace Sunnysideup\WebPortfolio\Dataobjects;
 
-use DataObject;
+
+use Sunnysideup\WebPortfolio\Dataobjects\WebPortfolioItem;
+use SilverStripe\ORM\DataObject;
+
 
 /**
  * @author Nicolaas [at] sunnysideup.co.nz
@@ -18,7 +21,7 @@ class WebPortfolioAgent extends DataObject
     );
 
     private static $has_many = array(
-        "WebPortfolioItem" => "WebPortfolioItem"
+        "WebPortfolioItem" => WebPortfolioItem::class
     );
 
     private static $default_sort = "Name";
