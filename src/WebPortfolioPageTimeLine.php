@@ -14,7 +14,7 @@ use HtmlEditorField;
 
 use PrettyPhoto;
 
-use Sunnysideup\WebPortfolio\Dataobjects\WebPortfolioItem;
+use Sunnysideup\WebPortfolio\Models\WebPortfolioItem;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\CheckboxSetField;
@@ -39,6 +39,9 @@ use PageController;
 
 class WebPortfolioPageTimeLine extends Page
 {
+
+    private static $table_name = 'WebPortfolioPageTimeLine';
+
     private static $icon = "webportfolio/images/treeicons/WebPortfolioPageTimeLine";
 
     private static $db = array(

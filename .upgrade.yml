@@ -3,7 +3,7 @@ mappings:
   WebPortfolioPageTimeLine_Controller: Sunnysideup\WebPortfolio\WebPortfolioPageTimeLine_Controller
   WebPortfolioPage: Sunnysideup\WebPortfolio\WebPortfolioPage
   WebPortfolioPage_Controller: Sunnysideup\WebPortfolio\WebPortfolioPage_Controller
-  WebPortfolioItem: Sunnysideup\WebPortfolio\Dataobjects\WebPortfolioItem
-  WebPortfolioWhatWeDidDescriptor: Sunnysideup\WebPortfolio\Dataobjects\WebPortfolioWhatWeDidDescriptor
-  WebPortfolioAdmin: Sunnysideup\WebPortfolio\Dataobjects\WebPortfolioAdmin
-  WebPortfolioAgent: Sunnysideup\WebPortfolio\Dataobjects\WebPortfolioAgent
+  WebPortfolioItem: Sunnysideup\WebPortfolio\Models\WebPortfolioItem
+  WebPortfolioWhatWeDidDescriptor: Sunnysideup\WebPortfolio\Models\WebPortfolioWhatWeDidDescriptor
+  WebPortfolioAdmin: Sunnysideup\WebPortfolio\Models\WebPortfolioAdmin
+  WebPortfolioAgent: Sunnysideup\WebPortfolio\Models\WebPortfolioAgent

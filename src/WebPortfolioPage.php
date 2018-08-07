@@ -12,14 +12,14 @@ use Page;
 use PrettyPhoto;
 
 
-use Sunnysideup\WebPortfolio\Dataobjects\WebPortfolioItem;
+use Sunnysideup\WebPortfolio\Models\WebPortfolioItem;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\CheckboxSetField;
 use SilverStripe\View\Requirements;
 use Sunnysideup\WebPortfolio\WebPortfolioPage;
 use SilverStripe\Core\Convert;
-use Sunnysideup\WebPortfolio\Dataobjects\WebPortfolioWhatWeDidDescriptor;
+use Sunnysideup\WebPortfolio\Models\WebPortfolioWhatWeDidDescriptor;
 use PageController;
 
 
