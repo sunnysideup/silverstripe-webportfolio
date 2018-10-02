@@ -62,10 +62,6 @@ class WebPortfolioItem extends DataObject
         "WhatWeDid" => WebPortfolioWhatWeDidDescriptor::class,
     );
 
-    private static $belongs_many_many = array(
-        "WhatWeDid" => WebPortfolioWhatWeDidDescriptor::class,
-    );
-
     private static $defaults = array(
         "WebAddress" => "http",
         "NoLongerActive" => false,
