@@ -7,7 +7,7 @@ use PrettyPhoto;
 
 use Sunnysideup\WebPortfolio\Models\WebPortfolioItem;
 use SilverStripe\Forms\TextField;
-use SilverStripe\Forms\HtmlEditorField;
+use SilverStripe\Forms\HtmlEditor\HtmlEditorField;
 use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\CheckboxSetField;
 use SilverStripe\Core\Config\Config;
