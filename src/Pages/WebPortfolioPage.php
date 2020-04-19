@@ -14,7 +14,7 @@ use Page;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\CheckboxSetField;
 use SilverStripe\Forms\LiteralField;
-use Sunnysideup\WebPortfolio\Models\WebPortfolioItem;
+use Sunnysideup\WebPortfolio\Model\WebPortfolioItem;
 
 /**
  * @author Nicolaas [at] sunnysideup.co.nz

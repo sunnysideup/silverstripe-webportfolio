@@ -8,8 +8,8 @@ use SilverStripe\Core\Convert;
 
 use SilverStripe\View\Requirements;
 use Sunnysideup\PrettyPhoto\PrettyPhoto;
-use Sunnysideup\WebPortfolio\Models\WebPortfolioItem;
-use Sunnysideup\WebPortfolio\Models\WebPortfolioWhatWeDidDescriptor;
+use Sunnysideup\WebPortfolio\Model\WebPortfolioItem;
+use Sunnysideup\WebPortfolio\Model\WebPortfolioWhatWeDidDescriptor;
 use Sunnysideup\WebPortfolio\Pages\WebPortfolioPage;
 
 /**

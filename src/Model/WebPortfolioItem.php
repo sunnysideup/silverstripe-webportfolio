@@ -1,6 +1,6 @@
 <?php
 
-namespace Sunnysideup\WebPortfolio\Models;
+namespace Sunnysideup\WebPortfolio\Model;
 
 use DataObjectOneFieldUpdateController;
 
@@ -13,6 +13,8 @@ use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\DataObject;
 use Sunnysideup\WebPortfolio\Pages\WebPortfolioPage;
+use Sunnysideup\WebPortfolio\Model\WebPortfolioAgent;
+use Sunnysideup\WebPortfolio\Model\WebPortfolioWhatWeDidDescriptor;
 
 /**
  * @author Nicolaas [at] sunnysideup.co.nz

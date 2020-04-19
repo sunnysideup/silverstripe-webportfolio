@@ -1,8 +1,9 @@
 <?php
 
-namespace Sunnysideup\WebPortfolio\Models;
+namespace Sunnysideup\WebPortfolio\Model;
 
 use SilverStripe\ORM\DataObject;
+use Sunnysideup\WebPortfolio\Model\WebPortfolioItem;
 
 /**
  * @author Nicolaas [at] sunnysideup.co.nz
