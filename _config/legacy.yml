@@ -3,10 +3,7 @@ Name: webportfoliolegacy
 ---
 SilverStripe\ORM\DatabaseAdmin:
   classname_value_remapping:
-    WebPortfolioPageTimeLine: Sunnysideup\WebPortfolio\Pages\WebPortfolioPageTimeLine
-    WebPortfolioPageTimeLine_Controller: Sunnysideup\WebPortfolio\Pages\WebPortfolioPageTimeLine_Controller
     WebPortfolioPage: Sunnysideup\WebPortfolio\Pages\WebPortfolioPage
-    WebPortfolioPage_Controller: Sunnysideup\WebPortfolio\Pages\WebPortfolioPage_Controller
     WebPortfolioItem: Sunnysideup\WebPortfolio\Model\WebPortfolioItem
     WebPortfolioWhatWeDidDescriptor: Sunnysideup\WebPortfolio\Model\WebPortfolioWhatWeDidDescriptor
     WebPortfolioAgent: Sunnysideup\WebPortfolio\Model\WebPortfolioAgent
