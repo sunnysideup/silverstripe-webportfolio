@@ -22,7 +22,7 @@
         }
     ],
     "require": {
-        "silverstripe/framework": "^4.0 || ^ 5.0",
+        "silverstripe/framework": "^4.0 || ^5.0",
         "silverstripe/recipe-cms": "^4@stable",
         "sunnysideup/prettyphoto": "dev-master"
     },
