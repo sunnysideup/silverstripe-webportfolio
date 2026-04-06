@@ -1,34 +1,34 @@
 {
-    "name": "sunnysideup/webportfolio",
-    "type": "silverstripe-vendormodule",
-    "description": "add a portfolio to your silverstripe website",
-    "keywords": [
-        "Silverstripe-CMS",
-        "CMS",
-        "Silverstripe",
-        "webportfolio",
-        "portfolio",
-        "web-developer",
-        "list of work",
-        "gallery",
-        "timeline"
-    ],
-    "license": "BSD-3-Clause",
-    "authors": [
-        {
-            "name": "Nicolaas Francken",
-            "email": "modules@sunnysideup.co.nz",
-            "role": "lead developer"
-        }
-    ],
-    "require": {
-        "silverstripe/framework": "^4.0 || ^5.0",
-        "sunnysideup/prettyphoto": "dev-master"
-    },
-    "extra": [],
-    "autoload": {
-        "psr-4": {
-            "Sunnysideup\\WebPortfolio\\": "src/"
-        }
+  "name": "sunnysideup/webportfolio",
+  "type": "silverstripe-vendormodule",
+  "description": "add a portfolio to your silverstripe website",
+  "keywords": [
+    "Silverstripe-CMS",
+    "CMS",
+    "Silverstripe",
+    "webportfolio",
+    "portfolio",
+    "web-developer",
+    "list of work",
+    "gallery",
+    "timeline"
+  ],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Nicolaas Francken",
+      "email": "modules@sunnysideup.co.nz",
+      "role": "lead developer"
     }
+  ],
+  "require": {
+    "silverstripe/framework": "^4.0 || ^5.0",
+    "sunnysideup/prettyphoto": "5.x-dev"
+  },
+  "extra": [],
+  "autoload": {
+    "psr-4": {
+      "Sunnysideup\\WebPortfolio\\": "src/"
+    }
+  }
 }
